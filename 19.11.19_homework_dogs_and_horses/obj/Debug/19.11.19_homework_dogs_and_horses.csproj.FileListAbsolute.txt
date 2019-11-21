@@ -1,0 +1,9 @@
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\bin\Debug\19.11.19_homework_dogs_and_horses.exe.config
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\bin\Debug\19.11.19_homework_dogs_and_horses.exe
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\bin\Debug\19.11.19_homework_dogs_and_horses.pdb
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\19.11.19_homework_dogs_and_horses.csprojAssemblyReference.cache
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\_19._11._19_homework_dogs_and_horses.Properties.Resources.resources
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\19.11.19_homework_dogs_and_horses.csproj.GenerateResource.cache
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\19.11.19_homework_dogs_and_horses.exe
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\19.11.19_homework_dogs_and_horses.pdb
+C:\Users\Gil\source\repos\19.11.19_homework_dogs_and_horses\19.11.19_homework_dogs_and_horses\obj\Debug\_19._11._19_homework_dogs_and_horses.Form1.resources
