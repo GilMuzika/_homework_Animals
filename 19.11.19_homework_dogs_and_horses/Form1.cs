@@ -41,6 +41,8 @@ namespace _19._11._19_homework_dogs_and_horses
 
             ComboItem item = null;
 
+
+
             switch (cmbCreateNewAnimal.SelectedIndex)
             {
                 case 0: //Dog
@@ -85,101 +87,83 @@ namespace _19._11._19_homework_dogs_and_horses
 
         private void cmbAllTheAnimals_SelectedIndexChanged(object sender, EventArgs e)
         {
+            for (int i = 0; i < 10; i++)
+            {
+                foreach (Control s in this.Controls)
+                {
+                    if (s.Tag != null && s.Tag.Equals("!@#")) { s.Visible = false; this.Controls.Remove(s); }
+                }
+            }
+
+
             //Animal animal = _animals[cmbAllTheAnimals.SelectedIndex];
             Animal animal = (cmbAllTheAnimals.SelectedItem as ComboItem).Item as Animal;
 
-            switch ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.Name)
+
+             var allProperties =  (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperties();
+            string propertyNames = string.Empty;
+            foreach (var s in allProperties) propertyNames += $"{s.Name}: {s.GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item)}\n";
+
+            if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Picture") != null)
             {
-                
-                case "Dog":
-                    animal = ((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Dog;
-                    pbcAnimal.Width = (animal as Dog).Picture.Width;
-                    pbcAnimal.Height = (animal as Dog).Picture.Height;
-                    pbcAnimal.Image = (animal as Dog).Picture;
+                pbcAnimal.Width = ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Picture").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Bitmap).Width;
+                pbcAnimal.Height = ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Picture").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Bitmap).Height;
+                pbcAnimal.Image = (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Picture").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Bitmap;                
+            }
 
-                    Label dogName = new Label();
-                    dogName.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 10);
-                    dogName.Text = (animal as Dog).Name;
-                    this.Controls.Add(dogName);
+            if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Name") != null)
+            {
+                Label animalName = new Label();
+                animalName.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 10);
+                animalName.Text = (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("Name").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item).ToString();
+                animalName.AutoSize = true;
+                animalName.Tag = "!@#";
+                this.Controls.Add(animalName);
 
-                    Label favoriteDogFood = new Label();
-                    favoriteDogFood.Location = new Point(dogName.Location.X, dogName.Location.Y + dogName.Height + 5);
-                    favoriteDogFood.Text = (animal as Dog).FavoriteDogFood;
-                    this.Controls.Add(favoriteDogFood);
-
-
-                    break;
-                case "Horse":
-                    animal = ((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Horse;
-                    pbcAnimal.Width = (animal as Horse).Picture.Width;
-                    pbcAnimal.Height = (animal as Horse).Picture.Height;
-                    pbcAnimal.Image = (animal as Horse).Picture;
-
+                if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("RacingHorse") != null)
+                {
                     string isRacing = string.Empty;
                     if (chkHorseIsRacing.Checked) isRacing = $" is a racing horse";
                     else isRacing = $" is't a racing horse";
 
-                    Label horseName = new Label();
-                    horseName.AutoSize = true;
-                    horseName.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 10);
-                    horseName.Text = $"{(animal as Horse).Name}, {isRacing}";
-                    this.Controls.Add(horseName);
-
-
-
-                    break;
-                case "Poodle":
-                    animal = ((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Poodle;
-                    pbcAnimal.Width = (animal as Poodle).Picture.Width;
-                    pbcAnimal.Height = (animal as Poodle).Picture.Height;
-                    pbcAnimal.Image = (animal as Poodle).Picture;
-
-
-                    Label poodleName = new Label();
-                    poodleName.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 10);
-                    poodleName.Text = (animal as Poodle).Name;
-                    this.Controls.Add(poodleName);
-
-                    Label favoritePoodleFood = new Label();
-                    favoritePoodleFood.Location = new Point(poodleName.Location.X, poodleName.Location.Y + poodleName.Height + 5);
-                    favoritePoodleFood.Text = (animal as Dog).FavoriteDogFood;
-                    this.Controls.Add(favoritePoodleFood);
-
-                    Label numberOfPonyTails = new Label();
-                    numberOfPonyTails.Location = new Point(favoritePoodleFood.Location.X, favoritePoodleFood.Location.Y + favoritePoodleFood.Height + 5);
-                    numberOfPonyTails.Text = (animal as Poodle).NumberOfPonyTail.ToString();
-                    this.Controls.Add(numberOfPonyTails);
-
-                    break;
-                case "Wolf":
-                    animal = ((cmbAllTheAnimals.SelectedItem as ComboItem).Item) as Wolf;
-                    pbcAnimal.Width = (animal as Wolf).Picture.Width;
-                    pbcAnimal.Height = (animal as Wolf).Picture.Height;
-                    pbcAnimal.Image = (animal as Wolf).Picture;
-
-                    Label wolfName = new Label();
-                    wolfName.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 10);
-                    wolfName.Text = (animal as Wolf).Name;
-                    this.Controls.Add(wolfName);
-
-                    Label favoriteWolfFood = new Label();
-                    favoriteWolfFood.Location = new Point(wolfName.Location.X, wolfName.Location.Y + wolfName.Height + 5);
-                    favoriteWolfFood.Text = (animal as Wolf).FavoriteDogFood;
-                    this.Controls.Add(favoriteWolfFood);
-
-                    Label nameOfPack = new Label();
-                    nameOfPack.Location = new Point(favoriteWolfFood.Location.X, favoriteWolfFood.Location.Y + favoriteWolfFood.Height + 5);
-                    nameOfPack.Text = (animal as Wolf).NameOfPack;
-                    this.Controls.Add(nameOfPack);
-
-                    break;
-
+                    animalName.Text += isRacing;
+                }
 
             }
-            
 
+            if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("FavoriteDogFood") != null)
+            {
+                Label favoriteDogFood = new Label();
+                favoriteDogFood.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 30);
+                favoriteDogFood.Text = (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("FavoriteDogFood").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item).ToString();
+                favoriteDogFood.Tag = "!@#";
+                this.Controls.Add(favoriteDogFood);
+            }
 
+            if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("NumberOfPonyTail") != null)
+            {
+                Label numberOfPonyTails = new Label();
+                numberOfPonyTails.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 60);
+                numberOfPonyTails.AutoSize = true;
+                numberOfPonyTails.Tag = "!@#";
+                numberOfPonyTails.Name = "numberOfPonyTails";
+                numberOfPonyTails.Text = (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("NumberOfPonyTail").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item).ToString();
+                this.Controls.Add(numberOfPonyTails);                
+            }
 
+            if ((cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("NameOfPack") != null)
+            {
+                Label nameOfPack = new Label();
+                nameOfPack.Location = new Point(pbcAnimal.Location.X, pbcAnimal.Location.Y + pbcAnimal.Height + 60);
+                nameOfPack.AutoSize = true;
+                nameOfPack.Tag = "!@#";
+                nameOfPack.Name = "nameOfPack";
+                nameOfPack.Text = (cmbAllTheAnimals.SelectedItem as ComboItem).ItemType.GetProperty("NameOfPack").GetValue((cmbAllTheAnimals.SelectedItem as ComboItem).Item).ToString();
+                this.Controls.Add(nameOfPack);                
+            }
+
+               // MessageBox.Show(propertyNames);
+     
             pbcAnimal.Visible = true;
             
 
@@ -198,31 +182,33 @@ namespace _19._11._19_homework_dogs_and_horses
 
         private void cmbCreateNewAnimal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            /*
+
+            foreach (Control s in this.Controls)
+            {
+                if (s.Tag != null && s.Tag.Equals("!@#")) { this.Controls.Remove(s); }
+                if (s.Tag != null && s.Tag.Equals("leftInterface")) s.Visible = false;
+            }
+            lblAnimalName.Visible = true; txtAnimalName.Visible = true;
+
             switch(cmbCreateNewAnimal.SelectedIndex)
             {
                 case 0:
-                    
-                    chkHorseIsRacing.Visible = false;
-                    numDogPoodleNumberOfPonyTails.Visible = false;
-                    txtDogWolfNameOfPack.Visible = false;
+                    lblDogFavoriteDogFood.Visible = true; txtDogFavoriteDogFood.Visible = true;
                     break;
                 case 1:
-                    txtDogFavoriteDogFood.Visible = false;
-                    numDogPoodleNumberOfPonyTails.Visible = false;
-                    txtDogWolfNameOfPack.Visible = false;
+                    lblHorseIsRacing.Visible = true; chkHorseIsRacing.Visible = true;
                     break;
                 case 2:
-                    chkHorseIsRacing.Visible = false;
-                    numDogPoodleNumberOfPonyTails.Visible = false;
-                    txtDogWolfNameOfPack.Visible = false;
+                    lblDogPoodleNumberOfPonyTails.Visible = true; numDogPoodleNumberOfPonyTails.Visible = true;
+                    lblDogFavoriteDogFood.Visible = true; txtDogFavoriteDogFood.Visible = true;
                     break;
                 case 3:
-                    chkHorseIsRacing.Visible = false;
-                    numDogPoodleNumberOfPonyTails.Visible = false;
+                    lblDogWolfNameOfPack.Visible = true; txtDogWolfNameOfPack.Visible = true;
+                    lblDogFavoriteDogFood.Visible = true; txtDogFavoriteDogFood.Visible = true;
                     break;
             }
-            */
+            
         }
+
     }
 }

@@ -43,6 +43,7 @@
             this.lblAllTheAnimals = new System.Windows.Forms.Label();
             this.btnCreateAnimal = new System.Windows.Forms.Button();
             this.pbcAnimal = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numDogPoodleNumberOfPonyTails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcAnimal)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             this.cmbCreateNewAnimal.Name = "cmbCreateNewAnimal";
             this.cmbCreateNewAnimal.Size = new System.Drawing.Size(264, 21);
             this.cmbCreateNewAnimal.TabIndex = 0;
+            this.cmbCreateNewAnimal.Tag = "";
             this.cmbCreateNewAnimal.SelectedIndexChanged += new System.EventHandler(this.cmbCreateNewAnimal_SelectedIndexChanged);
             // 
             // lblAnimalName
@@ -63,6 +65,7 @@
             this.lblAnimalName.Name = "lblAnimalName";
             this.lblAnimalName.Size = new System.Drawing.Size(38, 13);
             this.lblAnimalName.TabIndex = 1;
+            this.lblAnimalName.Tag = "leftInterface";
             this.lblAnimalName.Text = "Name:";
             // 
             // txtAnimalName
@@ -71,6 +74,7 @@
             this.txtAnimalName.Name = "txtAnimalName";
             this.txtAnimalName.Size = new System.Drawing.Size(159, 20);
             this.txtAnimalName.TabIndex = 2;
+            this.txtAnimalName.Tag = "leftInterface";
             // 
             // lblDogFavoriteDogFood
             // 
@@ -79,6 +83,7 @@
             this.lblDogFavoriteDogFood.Name = "lblDogFavoriteDogFood";
             this.lblDogFavoriteDogFood.Size = new System.Drawing.Size(93, 13);
             this.lblDogFavoriteDogFood.TabIndex = 3;
+            this.lblDogFavoriteDogFood.Tag = "leftInterface";
             this.lblDogFavoriteDogFood.Text = "Favorite dog food:";
             // 
             // txtDogFavoriteDogFood
@@ -87,6 +92,7 @@
             this.txtDogFavoriteDogFood.Name = "txtDogFavoriteDogFood";
             this.txtDogFavoriteDogFood.Size = new System.Drawing.Size(159, 20);
             this.txtDogFavoriteDogFood.TabIndex = 4;
+            this.txtDogFavoriteDogFood.Tag = "leftInterface";
             // 
             // lblHorseIsRacing
             // 
@@ -95,6 +101,7 @@
             this.lblHorseIsRacing.Name = "lblHorseIsRacing";
             this.lblHorseIsRacing.Size = new System.Drawing.Size(97, 13);
             this.lblHorseIsRacing.TabIndex = 5;
+            this.lblHorseIsRacing.Tag = "leftInterface";
             this.lblHorseIsRacing.Text = "Is the racing horse:";
             // 
             // chkHorseIsRacing
@@ -104,6 +111,7 @@
             this.chkHorseIsRacing.Name = "chkHorseIsRacing";
             this.chkHorseIsRacing.Size = new System.Drawing.Size(15, 14);
             this.chkHorseIsRacing.TabIndex = 6;
+            this.chkHorseIsRacing.Tag = "leftInterface";
             this.chkHorseIsRacing.UseVisualStyleBackColor = true;
             // 
             // lblDogPoodleNumberOfPonyTails
@@ -113,6 +121,7 @@
             this.lblDogPoodleNumberOfPonyTails.Name = "lblDogPoodleNumberOfPonyTails";
             this.lblDogPoodleNumberOfPonyTails.Size = new System.Drawing.Size(106, 13);
             this.lblDogPoodleNumberOfPonyTails.TabIndex = 7;
+            this.lblDogPoodleNumberOfPonyTails.Tag = "leftInterface";
             this.lblDogPoodleNumberOfPonyTails.Text = "Number of pony tails:";
             // 
             // numDogPoodleNumberOfPonyTails
@@ -121,6 +130,7 @@
             this.numDogPoodleNumberOfPonyTails.Name = "numDogPoodleNumberOfPonyTails";
             this.numDogPoodleNumberOfPonyTails.Size = new System.Drawing.Size(46, 20);
             this.numDogPoodleNumberOfPonyTails.TabIndex = 9;
+            this.numDogPoodleNumberOfPonyTails.Tag = "leftInterface";
             // 
             // lblDogWolfNameOfPack
             // 
@@ -129,6 +139,7 @@
             this.lblDogWolfNameOfPack.Name = "lblDogWolfNameOfPack";
             this.lblDogWolfNameOfPack.Size = new System.Drawing.Size(77, 13);
             this.lblDogWolfNameOfPack.TabIndex = 10;
+            this.lblDogWolfNameOfPack.Tag = "leftInterface";
             this.lblDogWolfNameOfPack.Text = "Name of pack:";
             // 
             // txtDogWolfNameOfPack
@@ -137,6 +148,7 @@
             this.txtDogWolfNameOfPack.Name = "txtDogWolfNameOfPack";
             this.txtDogWolfNameOfPack.Size = new System.Drawing.Size(159, 20);
             this.txtDogWolfNameOfPack.TabIndex = 11;
+            this.txtDogWolfNameOfPack.Tag = "leftInterface";
             // 
             // cmbAllTheAnimals
             // 
@@ -175,11 +187,21 @@
             this.pbcAnimal.TabStop = false;
             this.pbcAnimal.Visible = false;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(644, 393);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbcAnimal);
             this.Controls.Add(this.btnCreateAnimal);
             this.Controls.Add(this.lblAllTheAnimals);
@@ -221,6 +243,7 @@
         private System.Windows.Forms.Label lblAllTheAnimals;
         private System.Windows.Forms.Button btnCreateAnimal;
         private System.Windows.Forms.PictureBox pbcAnimal;
+        private System.Windows.Forms.Button button1;
     }
 }
 
