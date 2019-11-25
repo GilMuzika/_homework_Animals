@@ -37,7 +37,8 @@ namespace _19._11._19_homework_dogs_and_horses
 
         public virtual void Neight()
         {
-            throw new NotImplementedException();
+            _mp3player.URL = "_Library/Horse Neigh-SoundBible.com-1740540960.mp3";
+            _mp3player.controls.play();
         }
 
         public override string ToString()

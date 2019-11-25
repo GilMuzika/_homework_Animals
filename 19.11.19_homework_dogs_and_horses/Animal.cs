@@ -9,6 +9,7 @@ namespace _19._11._19_homework_dogs_and_horses
 {
     abstract class Animal
     {
+        protected WMPLib.WindowsMediaPlayer _mp3player = new WMPLib.WindowsMediaPlayer();
         public virtual string Name { get; set; } = default;
 
         public virtual bool IsAnimal { get; set; } = false;

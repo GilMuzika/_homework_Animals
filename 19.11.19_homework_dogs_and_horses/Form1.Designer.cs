@@ -43,7 +43,6 @@
             this.lblAllTheAnimals = new System.Windows.Forms.Label();
             this.btnCreateAnimal = new System.Windows.Forms.Button();
             this.pbcAnimal = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numDogPoodleNumberOfPonyTails)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbcAnimal)).BeginInit();
             this.SuspendLayout();
@@ -187,21 +186,11 @@
             this.pbcAnimal.TabStop = false;
             this.pbcAnimal.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(644, 393);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pbcAnimal);
             this.Controls.Add(this.btnCreateAnimal);
             this.Controls.Add(this.lblAllTheAnimals);
@@ -243,7 +232,6 @@
         private System.Windows.Forms.Label lblAllTheAnimals;
         private System.Windows.Forms.Button btnCreateAnimal;
         private System.Windows.Forms.PictureBox pbcAnimal;
-        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -34,7 +34,8 @@ namespace _19._11._19_homework_dogs_and_horses
 
         public override void Bark()
         {
-            throw new NotImplementedException();
+            _mp3player.URL = "_Library/small-dog-barking_daniel-simion.mp3";
+            _mp3player.controls.play();
         }
 
         public override string ToString()

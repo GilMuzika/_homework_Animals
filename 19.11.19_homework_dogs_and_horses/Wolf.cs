@@ -31,7 +31,8 @@ namespace _19._11._19_homework_dogs_and_horses
 
         public override void MakeSound()
         {
-            throw new NotImplementedException();
+            _mp3player.URL = "_Library/Wolf Growling Fiercely-SoundBible.com-667953206.mp3";
+            _mp3player.controls.play();
         }
 
         public override string ToString()

@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WMPLib;
 
 namespace _19._11._19_homework_dogs_and_horses
 {
@@ -38,7 +39,8 @@ namespace _19._11._19_homework_dogs_and_horses
 
         public virtual void Bark()
         {
-            throw new NotImplementedException();
+            _mp3player.URL = "_Library/labrador-barking-daniel_simon.mp3";
+            _mp3player.controls.play();
         }
 
         public override string ToString()
